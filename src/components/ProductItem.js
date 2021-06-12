@@ -12,7 +12,7 @@ const ProductItem = ({ product, deleteProduct }) => {
       </Link>
       <p>{product.name}</p>
       <p className="product-price">{product.price} KD</p>
-      <DeleteButton productId={product.id} deleteProduct={deleteProduct} />
+      <DeleteButton productId={product.id} />
     </ProductWrapper>
   );
 };
