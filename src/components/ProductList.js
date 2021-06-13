@@ -1,11 +1,13 @@
 // Styling
 import { ListWrapper } from "../styles";
+
 // Components
+
 import ProductItem from "./ProductItem";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-
+import { Link } from "react-router-dom";
 const ProductList = () => {
   const products = useSelector((state) => state.products);
 
@@ -19,6 +21,9 @@ const ProductList = () => {
 
   return (
     <div>
+      <Link to="/AddProduct">
+        <button>Add Product</button>
+      </Link>
       <SearchBar setQuery={setQuery} />
       <ListWrapper>{productList}</ListWrapper>
     </div>

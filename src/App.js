@@ -6,11 +6,11 @@ import { GlobalStyle } from "./styles";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 // Components
+import AddProduct from "./components/AddProduct";
 import ProductDetail from "./components/ProductDetail";
 import ProductList from "./components/ProductList";
 import { ThemeProvider } from "styled-components";
 // Data
-import productsData from "./products";
 
 const theme = {
   light: {
@@ -29,14 +29,6 @@ const theme = {
 
 function App() {
   const [currentTheme, setCurrentTheme] = useState("light");
-  const [products, setProducts] = useState(productsData);
-
-  const deleteProduct = (productId) => {
-    const updatedProducts = products.filter(
-      (product) => product.id !== productId
-    );
-    setProducts(updatedProducts);
-  };
 
   const toggleTheme = () =>
     setCurrentTheme(currentTheme === "light" ? "dark" : "light");
@@ -46,12 +38,16 @@ function App() {
       <GlobalStyle />
       <NavBar currentTheme={currentTheme} toggleTheme={toggleTheme} />
       <Switch>
+        <Route path="/AddProduct">
+          <AddProduct />
+        </Route>
         <Route exact path="/">
           <Home />
         </Route>
         <Route path="/products/:productSlug">
           <ProductDetail />
         </Route>
+
         <Route path="/products">
           <ProductList />
         </Route>

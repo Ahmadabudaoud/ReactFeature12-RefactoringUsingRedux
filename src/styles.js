@@ -99,3 +99,10 @@ export const ThemeButton = styled.button`
 export const Title = styled.h1`
   text-align: center;
 `;
+export const Adddiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+  align-items: center;
+`;
