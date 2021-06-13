@@ -2,7 +2,7 @@
 import DeleteButton from "./buttons/DeleteButton";
 import { Link } from "react-router-dom";
 // Styling
-import { ProductWrapper } from "../styles";
+import { ProductWrapper, UpdateButtonStyled, UnderDiv } from "../styles";
 
 const ProductItem = ({ product, deleteProduct }) => {
   return (
@@ -12,7 +12,12 @@ const ProductItem = ({ product, deleteProduct }) => {
       </Link>
       <p>{product.name}</p>
       <p className="product-price">{product.price} KD</p>
-      <DeleteButton productId={product.id} />
+      <UnderDiv>
+        <DeleteButton productId={product.id} />
+        <Link to={`/products/${product.slug}/edit`}>
+          <UpdateButtonStyled />
+        </Link>
+      </UnderDiv>
     </ProductWrapper>
   );
 };

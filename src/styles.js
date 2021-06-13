@@ -106,3 +106,12 @@ export const Adddiv = styled.div`
   margin-top: 15px;
   align-items: center;
 `;
+export const UpdateButtonStyled = styled.button`
+  height: 25px;
+  width: 30px;
+`;
+export const UnderDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+`;

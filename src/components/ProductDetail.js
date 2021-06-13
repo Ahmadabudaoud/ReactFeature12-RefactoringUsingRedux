@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 // Components
 import DeleteButton from "./buttons/DeleteButton";
 // Styling
-import { DetailWrapper } from "../styles";
+import { DetailWrapper, UpdateButtonStyled } from "../styles";
 
 const ProductDetail = ({ deleteProduct }) => {
   const products = useSelector((state) => state.products);
